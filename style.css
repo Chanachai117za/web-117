@@ -1,183 +1,157 @@
----
-
-สไตล์พื้นฐานของเว็บ
-----------------------------------------*/
 body {
-font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt จาก Google Fonts */
-background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* พื้นหลังไล่สีมุม 135 องศา จาก #cfd9df ไป #e2ebf0 */
-margin: 0; /* ลบ margin เริ่มต้นของ browser เพื่อให้ชิดขอบ */
-padding: 0; /* ลบ padding เริ่มต้น */
-color: #333; /* สีตัวอักษรหลักของ body */
-overflow-x: hidden; /* ป้องกัน scroll แนวนอนเวลา element ล้นขอบ */
+    font-family: 'Prompt', sans-serif;
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
 }
 
-/* ----------------------------------------
-Animation Fade-in ใช้กับ class="fade"
-----------------------------------------*/
+/* เอฟเฟกต์ Fade-in */
 .fade {
-animation: fadeInUp 1s ease; /* เรียกใช้ keyframes fadeInUp ใช้เวลา 1 วินาที แบบ easing */
+    animation: fadeInUp 1s ease;
 }
 
 @keyframes fadeInUp {
-0% { opacity: 0; transform: translateY(30px); } /* เริ่มจากโปร่งใสและเลื่อนขึ้นจากด้านล่าง 30px */
-100% { opacity: 1; transform: translateY(0); } /* จบ animation โปร่งใสเต็มที่และอยู่ตำแหน่งเดิม */
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ----------------------------------------
-หัวข้อ H1
-----------------------------------------*/
+/* Header */
 h1 {
-text-align: center; /* จัดกึ่งกลาง */
-margin-top: 40px; /* เว้นด้านบน 40px */
-font-size: 3.2rem; /* ขนาดตัวอักษร 3.2rem (3.2 * root font size, ปกติ root=16px → 51.2px) */
-font-weight: 600; /* หนักระดับ Semi-Bold */
-color: #1d3557; /* สีน้ำเงินเข้ม */
-text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* เงาข้อความ: เลื่อนขวา 2px, ลง 2px, เบลอ 4px, สีดำโปร่ง 15% */
-animation: zoomIn 1s ease; /* animation zoomIn */
+    text-align: center;
+    margin-top: 40px;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #1d3557;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    animation: zoomIn 1s ease;
 }
 
-/* Effect Zoom */
 @keyframes zoomIn {
-0% { transform: scale(0.8); opacity: 0; } /* เริ่มจากขนาด 0.8 และโปร่งใส 0% */
-100% { transform: scale(1); opacity: 1; } /* ขยายเต็มขนาดและโปร่งใส 100% */
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* ----------------------------------------
-รูปโปรไฟล์
-----------------------------------------*/
+/* รูปโปรไฟล์ */
 .profile-container {
-text-align: center; /* จัดกลางรูป */
-margin-top: 20px; /* เว้นด้านบน 20px */
+    text-align: center;
+    margin-top: 20px;
 }
 
 .profile-container img {
-width: 330px; /* กำหนดความกว้าง */
-height: 330px; /* กำหนดความสูง */
-object-fit: cover; /* ครอบรูปเต็มกรอบโดยไม่ยืดสัดส่วน */
-border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
-border: 7px solid #1d3557; /* ขอบรูป 7px สีเดียวกับ H1 */
-box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* เงารอบรูป: ลง 10px, เบลอ 25px, สีดำโปร่ง 30% */
-transition: 0.4s; /* animation smooth เวลา hover */
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid #1d3557;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.4s;
 }
 
-/* Hover = ขยาย + หมุนเล็กน้อย */
 .profile-container img:hover {
-transform: scale(1.05) rotate(2deg); /* ขยาย 105% และหมุน 2 องศา */
+    transform: scale(1.05) rotate(2deg);
 }
 
-/* ----------------------------------------
-Section ข้อมูลส่วนตัว
-----------------------------------------*/
+/* Section ข้อมูลส่วนตัว */
 .section {
-text-align: center; /* จัดกลาง */
-font-size: 1.6rem; /* ขนาดตัวอักษร 1.6rem */
-margin-top: 40px; /* เว้นด้านบน 40px */
-line-height: 2.3rem; /* ระยะห่างบรรทัด 2.3rem */
-padding: 0 20px; /* padding ซ้ายขวา 20px */
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 40px;
+    line-height: 2.3rem;
+    padding: 0 20px;
 }
 
-/* ----------------------------------------
-Section งานอดิเรก
-----------------------------------------*/
+/* Section งานอดิเรก */
 .hobby-section {
-font-size: 1.4rem; /* ขนาดตัวอักษร */
-margin: 60px auto; /* เว้นด้านบน-ล่าง 60px, จัดกึ่งกลางด้วย auto */
-width: 90%; /* กว้าง 90% ของหน้าจอ */
-max-width: 900px; /* ไม่เกิน 900px */
+    font-size: 1.4rem;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 900px;
 }
 
-/* กล่องงานอดิเรกแต่ละอัน */
 .hobby-item {
-margin-bottom: 70px; /* เว้นระยะด้านล่าง */
-display: flex; /* ใช้ flexbox */
-justify-content: space-between; /* ข้อความและรูปอยู่คนละด้าน */
-align-items: center; /* จัดแนวกลางตามแกนตั้ง */
-flex-wrap: wrap; /* ถ้าจอเล็ก ให้ขึ้นบรรทัดใหม่ */
-border-radius: 18px; /* มุมโค้ง 18px */
-padding: 30px; /* เว้นขอบด้านใน */
-background: rgba(255,255,255,0.7); /* สีพื้นหลังโปร่งใส 70% */
-backdrop-filter: blur(6px); /* เบลอพื้นหลังด้านหลัง element */
-box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* เงารอบ box */
-transition: 0.3s; /* animation smooth เวลา hover */
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 18px;
+    padding: 30px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
 
-/* hover = ลอยขึ้นนิดๆ */
 .hobby-item:hover {
-transform: translateY(-6px); /* ลอยขึ้น 6px */
-box-shadow: 0 12px 28px rgba(0,0,0,0.25); /* เงาเข้มขึ้น */
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
 .hobby-item img {
-width: 220px; /* กำหนดขนาดรูป */
-height: 220px;
-object-fit: cover; /* ครอบเต็มกรอบ */
-border-radius: 20px; /* มุมโค้งรูป */
-box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* เงารอบรูป */
-transition: 0.3s; /* animation smooth */
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-/* hover = ขยายเล็กน้อย */
 .hobby-item img:hover {
-transform: scale(1.06); /* ขยาย 106% */
+    transform: scale(1.06);
 }
 
-/* ----------------------------------------
-พื้นหลังแบบ Parallax
-----------------------------------------*/
+/* Background Parallax */
 .parallax {
-background-image: url('[https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80](https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80)'); /* รูปพื้นหลัง */
-height: 350px; /* ความสูงกล่อง */
-background-attachment: fixed; /* เลื่อนแบบ Parallax */
-background-position: center; /* จัดตำแหน่งกลาง */
-background-repeat: no-repeat; /* ไม่ซ้ำภาพ */
-background-size: cover; /* ครอบพื้นที่เต็ม */
-filter: brightness(0.7); /* ลดความสว่างเหลือ 70% */
-border-bottom-left-radius: 40px; /* มุมซ้ายล่างโค้ง 40px */
-border-bottom-right-radius: 40px; /* มุมขวาล่างโค้ง 40px */
-box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* เงาใต้กล่อง */
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80');
+    height: 350px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.7);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* ----------------------------------------
-ส่วนช่องทางติดต่อ
-----------------------------------------*/
+/* ข้อความ Contact */
 .contact-title {
-text-align: center; /* จัดกลาง */
-font-size: 2.4rem; /* ขนาดตัวอักษรใหญ่ */
-margin-top: 80px; /* เว้นด้านบน */
-color: #1d3557; /* สีฟอนต์ */
-font-weight: 600; /* หนัก semi-bold */
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 80px;
+    color: #1d3557;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .contact-section {
-font-size: 1.4rem; /* ขนาดตัวอักษร */
-width: 90%;
-max-width: 900px;
-margin: 40px auto 80px auto; /* เว้นบน 40px, ล่าง 80px, จัดกลาง */
-line-height: 2.3rem; /* ระยะห่างบรรทัด */
-padding: 20px 30px; /* ขอบด้านใน */
-background: rgba(255,255,255,0.7); /* พื้นหลังโปร่งใส */
-border-radius: 16px; /* มุมโค้ง */
-backdrop-filter: blur(5px); /* เบลอพื้นหลังด้านหลัง */
-box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* เงารอบ box */
-transition: 0.3s; /* animation smooth */
+    font-size: 1.4rem;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    line-height: 2.3rem;
+    padding: 20px 30px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* hover = ขยายและเพิ่มเงา */
 .contact-section:hover {
-transform: scale(1.02); /* ขยาย 102% */
-box-shadow: 0 15px 35px rgba(0,0,0,0.25); /* เงาเข้มขึ้น */
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: 0.3s;
 }
 
-/* ----------------------------------------
-ลิงก์
-----------------------------------------*/
 a {
-color: #1a237e; /* สีฟอนต์ลิงก์ */
-font-weight: 600; /* หนัก semi-bold */
-transition: 0.2s; /* animation smooth */
+    color: #1a237e;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
 a:hover {
-color: #0d47a1; /* สีเข้มขึ้นเมื่อ hover */
-text-decoration: underline; /* ขีดเส้นใต้ */
+    color: #0d47a1;
+    text-decoration: underline;
 }
