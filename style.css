@@ -1,25 +1,30 @@
-/* ฟอนต์และพื้นหลังหลักของเว็บไซต์ */
+/* ------------------------------
+   สไตล์พื้นฐานของเว็บ
+   ------------------------------ */
 body {
-    font-family: 'Prompt', sans-serif;
-    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* พื้นหลังแบบไล่สี */
     margin: 0;
     padding: 0;
     color: #333;
-    overflow-x: hidden; /* ป้องกันเว็บเลื่อนในแนวนอน */
+    overflow-x: hidden; /* กัน scrollbar แนวนอน */
 }
 
-/* เอฟเฟกต์การแสดงแบบเลื่อนขึ้นจางขึ้น */
+/* ------------------------------
+   Animation Fade-in (ใช้กับ class="fade")
+   ------------------------------ */
 .fade {
     animation: fadeInUp 1s ease;
 }
 
-/* Keyframe สำหรับ fadeInUp */
 @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(30px); }
+    0% { opacity: 0; transform: translateY(30px); } /* เริ่มจากล่าง */
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* สไตล์หัวข้อใหญ่ */
+/* ------------------------------
+   หัวข้อ H1
+   ------------------------------ */
 h1 {
     text-align: center;
     margin-top: 40px;
@@ -27,38 +32,41 @@ h1 {
     font-weight: 600;
     color: #1d3557;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-    animation: zoomIn 1s ease; /* Animation ซูมเข้า */
+    animation: zoomIn 1s ease; /* animation zoom */
 }
 
-/* Keyframe สำหรับซูม */
+/* Effect Zoom */
 @keyframes zoomIn {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* กล่องภาพโปรไฟล์ */
+/* ------------------------------
+   รูปโปรไฟล์
+   ------------------------------ */
 .profile-container {
     text-align: center;
     margin-top: 20px;
 }
 
-/* สไตล์ของภาพโปรไฟล์ */
 .profile-container img {
     width: 330px;
     height: 330px;
-    object-fit: cover; /* ครอบรูปให้พอดีวงกลม */
-    border-radius: 50%;
-    border: 7px solid #1d3557;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: 0.4s; /* ให้มีเอฟเฟกต์เวลา hover */
+    object-fit: cover; /* ครอบรูปให้พอดี */
+    border-radius: 50%; /* ทำเป็นวงกลม */
+    border: 7px solid #1d3557; /* ขอบรูป */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* เงา */
+    transition: 0.4s; /* เวลา hover */
 }
 
-/* ขยายภาพเล็กน้อยเมื่อชี้เมาส์ */
+/* Hover = ขยาย + หมุนเล็กน้อย */
 .profile-container img:hover {
     transform: scale(1.05) rotate(2deg);
 }
 
-/* สไตล์ของข้อความข้อมูลส่วนตัว */
+/* ------------------------------
+   Section ข้อมูลส่วนตัว
+   ------------------------------ */
 .section {
     text-align: center;
     font-size: 1.6rem;
@@ -67,7 +75,9 @@ h1 {
     padding: 0 20px;
 }
 
-/* กล่องรวมงานอดิเรก */
+/* ------------------------------
+   Section งานอดิเรก
+   ------------------------------ */
 .hobby-section {
     font-size: 1.4rem;
     margin: 60px auto;
@@ -75,53 +85,68 @@ h1 {
     max-width: 900px;
 }
 
-/* กล่องงานอดิเรกแต่ละ item */
+/* กล่องงานอดิเรกแต่ละอัน */
 .hobby-item {
     margin-bottom: 70px;
-    display: flex; /* จัดข้อความกับภาพให้อยู่ในบรรทัดเดียว */
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-between; /* ให้ข้อความ-รูปอยู่คนละด้าน */
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* ถ้าจอเล็กให้ขึ้นบรรทัดใหม่ */
     border-radius: 18px;
     padding: 30px;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(6px); /* ทำพื้นหลังโปร่งฟุ้งๆ แบบ glass */
+    background: rgba(255,255,255,0.7); /* พื้นหลังโปร่ง */
+    backdrop-filter: blur(6px); /* เบลอพื้นหลัง */
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     transition: 0.3s;
 }
 
-/* เอฟเฟกต์เลื่อนขึ้นเล็กน้อยเวลา hover */
+/* hover = ลอยขึ้นนิดๆ */
 .hobby-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-/* รูปภาพของงานอดิเรก */
 .hobby-item img {
     width: 220px;
     height: 220px;
-    object-fit: cover;
+    object-fit: cover; /* ทำให้รูปไม่ยืด */
     border-radius: 20px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     transition: 0.3s;
 }
 
-/* ขยายรูปเมื่อชี้เมาส์ */
+/* hover = ขยายเล็กน้อย */
 .hobby-item img:hover {
     transform: scale(1.06);
 }
 
-/* หัวข้อช่องทางติดต่อ */
+/* ------------------------------
+   พื้นหลังแบบ Parallax
+   ------------------------------ */
+.parallax {
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80');
+    height: 350px;
+    background-attachment: fixed; /* ทำให้เลื่อนแบบ Parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.7); /* ทำให้มืดลงเล็กน้อย */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ------------------------------
+   ส่วนช่องทางติดต่อ
+   ------------------------------ */
 .contact-title {
     text-align: center;
     font-size: 2.4rem;
     margin-top: 80px;
     color: #1d3557;
     font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-/* กล่องข้อมูลติดต่อ */
 .contact-section {
     font-size: 1.4rem;
     width: 90%;
@@ -133,63 +158,25 @@ h1 {
     border-radius: 16px;
     backdrop-filter: blur(5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* เอฟเฟกต์ hover ช่องติดต่อ */
-.contact-section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     transition: 0.3s;
 }
 
-/* ลิงก์ */
+/* hover = ขยายและเพิ่มเงา */
+.contact-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ------------------------------
+   ลิงก์
+   ------------------------------ */
 a {
     color: #1a237e;
     font-weight: 600;
     transition: 0.2s;
 }
+
 a:hover {
     color: #0d47a1;
     text-decoration: underline;
-}
-
-/* พื้นหลัง Parallax */
-.parallax {
-    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80');
-    height: 350px;
-    background-attachment: fixed; /* ทำให้พื้นหลังไม่เลื่อนตาม */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(0.7);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-/* เอฟเฟกต์ตัวหนังสือ Glow */
-.glow:hover {
-    text-shadow: 0 0 10px #4dabf7, 0 0 20px #228be6;
-    transition: 0.3s;
-}
-
-/* กล่องที่ลอยขึ้นลง */
-.float-box {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Keyframe สำหรับอนิเมชันลอย */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0); }
-}
-
-/* เส้นแบ่งตรงกลางแบบไล่สี */
-.divider {
-    width: 80%;
-    height: 4px;
-    margin: 50px auto;
-    background: linear-gradient(to right, #1d3557, #457b9d, #a8dadc);
-    border-radius: 10px;
 }
