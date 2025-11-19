@@ -1,117 +1,118 @@
-<!DOCTYPE html>
-<html lang="th">
+<!DOCTYPE html> <!-- ประกาศว่าเอกสารนี้เป็น HTML5 -->
+<html lang="th"> <!-- ระบุว่าภาษาของเว็บไซต์คือภาษาไทย -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who I Am?</title>
+    <meta charset="utf-8"> <!-- กำหนดให้รองรับภาษาไทยและตัวอักษร UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ให้เว็บไซต์แสดงผลเหมาะกับหน้าจอมือถือ -->
+    <title>Who I Am?</title> <!-- ชื่อแท็บของเว็บไซต์ -->
 
     <!-- ฟอนต์สวยงาม -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet"> <!-- โหลดฟอนต์ Prompt จาก Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" /> <!-- โหลด animate.css เพื่อสร้างแอนิเมชัน -->
 
-    <style>
-        body {
-            font-family: 'Prompt', sans-serif;
-            background: linear-gradient(135deg, #cfd9df, #e2ebf0);
-            margin: 0;
-            padding: 0;
-            color: #333;
-            overflow-x: hidden;
+    <style> /* เริ่มต้นส่วนของการเขียน CSS */
+
+        body { /* จัดรูปแบบ body ทั้งหน้า */
+            font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+            background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* พื้นหลังแบบไล่สี */
+            margin: 0; /* ตัดขอบนอกออก */
+            padding: 0; /* ตัดช่องว่างภายในออก */
+            color: #333; /* สีตัวอักษรทั่วหน้า */
+            overflow-x: hidden; /* ปิดการเลื่อนหน้าจอแนวนอน */
         }
 
         /* เอฟเฟกต์ Fade-in ทุก Section */
-        .fade {
-            animation: fadeInUp 1s ease;
+        .fade { 
+            animation: fadeInUp 1s ease; /* ใช้แอนิเมชัน fadeInUp เป็นเวลา 1 วินาที */
         }
 
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp { /* สร้างแอนิเมชันเอง */
+            0% { opacity: 0; transform: translateY(30px); } /* เริ่มต้นแบบจางและเลื่อนลง */
+            100% { opacity: 1; transform: translateY(0); } /* จบด้วยการแสดงผลปกติ */
         }
 
         /* Header */
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 3.2rem;
-            font-weight: 600;
-            color: #1d3557;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-            animation: zoomIn 1s ease;
+        h1 { /* สไตล์หัวข้อใหญ่ */
+            text-align: center; /* จัดตัวอักษรตรงกลาง */
+            margin-top: 40px; /* ระยะห่างด้านบน */
+            font-size: 3.2rem; /* ขนาดตัวอักษร */
+            font-weight: 600; /* ความหนาตัวอักษร */
+            color: #1d3557; /* สีหัวข้อ */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* เงาของตัวอักษร */
+            animation: zoomIn 1s ease; /* ใช้แอนิเมชัน zoomIn */
         }
 
-        @keyframes zoomIn {
+        @keyframes zoomIn { /* กำหนดแอนิเมชัน zoomIn */
             0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
 
         /* รูปโปรไฟล์ */
-        .profile-container {
-            text-align: center;
-            margin-top: 20px;
+        .profile-container { /* กล่องเก็บรูปโปรไฟล์ */
+            text-align: center; /* จัดรูปให้อยู่กลาง */
+            margin-top: 20px; /* ระยะขอบด้านบน */
         }
 
-        .profile-container img {
-            width: 330px;
-            height: 330px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 7px solid #1d3557;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: 0.4s;
+        .profile-container img { /* สไตล์ของรูปโปรไฟล์ */
+            width: 330px; /* กำหนดความกว้างรูป */
+            height: 330px; /* ความสูงรูป */
+            object-fit: cover; /* ครอบรูปให้เต็มพื้นที่ */
+            border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+            border: 7px solid #1d3557; /* ขอบสีกรม */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* เงาของรูป */
+            transition: 0.4s; /* ทำให้การ hover ลื่นไหล */
         }
 
-        .profile-container img:hover {
-            transform: scale(1.05) rotate(2deg);
+        .profile-container img:hover { 
+            transform: scale(1.05) rotate(2deg); /* ซูมเล็กน้อยและหมุน */
         }
 
         /* Section ข้อมูลส่วนตัว */
         .section {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-top: 40px;
-            line-height: 2.3rem;
-            padding: 0 20px;
+            text-align: center; /* จัดข้อความตรงกลาง */
+            font-size: 1.6rem; /* ขนาดตัวอักษร */
+            margin-top: 40px; /* ระยะห่างด้านบน */
+            line-height: 2.3rem; /* ระยะห่างระหว่างบรรทัด */
+            padding: 0 20px; /* ระยะห่างด้านซ้ายและขวา */
         }
 
         /* Section งานอดิเรก */
         .hobby-section {
-            font-size: 1.4rem;
-            margin: 60px auto;
-            width: 90%;
-            max-width: 900px;
+            font-size: 1.4rem; 
+            margin: 60px auto; /* ระยะห่างด้านบน-ล่าง และจัดกลางหน้าจอ */
+            width: 90%; /* ความกว้างสูงสุด 90% ของหน้า */
+            max-width: 900px; /* ไม่ให้เกิน 900px */
         }
 
-        .hobby-item {
-            margin-bottom: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-radius: 18px;
-            padding: 30px;
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-            transition: 0.3s;
+        .hobby-item { /* กล่องงานอดิเรกแต่ละอัน */
+            margin-bottom: 70px; /* ระยะห่างระหว่างกล่อง */
+            display: flex; /* ใช้ flexbox */
+            justify-content: space-between; /* วางองค์ประกอบให้แยกห่างกัน */
+            align-items: center; /* จัดให้อยู่แนวกลาง */
+            flex-wrap: wrap; /* ลงบรรทัดใหม่เมื่อหน้าจอเล็ก */
+            border-radius: 18px; /* ความโค้งของมุม */
+            padding: 30px; /* ระยะห่างในกล่อง */
+            background: rgba(255,255,255,0.7); /* กล่องโปร่งแสง */
+            backdrop-filter: blur(6px); /* ทำพื้นหลังมัวแบบกระจก */
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* เงา */
+            transition: 0.3s; /* ทำให้เอฟเฟกต์ลื่น */
         }
 
         .hobby-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+            transform: translateY(-6px); /* ขยับขึ้น */
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25); /* เงาเข้มขึ้น */
         }
 
-        .hobby-item img {
+        .hobby-item img { /* รูปในงานอดิเรก */
             width: 220px;
             height: 220px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            object-fit: cover; /* ครอบภาพให้เต็ม */
+            border-radius: 20px; /* ทำมุมโค้ง */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* เงา */
             transition: 0.3s;
         }
 
         .hobby-item img:hover {
-            transform: scale(1.06);
+            transform: scale(1.06); /* ซูมเล็กน้อย */
         }
 
         /* Contact */
@@ -137,38 +138,39 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
-        a {
+        a { /* สไตล์ลิงก์ */
             color: #1a237e;
             font-weight: 600;
             transition: 0.2s;
         }
-        a:hover {
+        a:hover { /* เมื่อชี้เมาส์ */
             color: #0d47a1;
             text-decoration: underline;
         }
-            /* เอฟเฟกต์ Parallax Background */
+
+        /* เอฟเฟกต์ Parallax Background */
         .parallax {
-            background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80');
-            height: 350px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            filter: brightness(0.7);
-            border-bottom-left-radius: 40px;
+            background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80'); /* รูปพื้นหลัง */
+            height: 350px; /* ความสูงของส่วนพารัลแลกซ์ */
+            background-attachment: fixed; /* ทำให้พื้นหลังเลื่อนช้ากว่าหน้าเว็บ */
+            background-position: center; /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+            background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+            background-size: cover; /* ปรับภาพให้เต็มกรอบ */
+            filter: brightness(0.7); /* ลดความสว่างเพื่อให้ดู cinematic */
+            border-bottom-left-radius: 40px; /* โค้งมุม */
             border-bottom-right-radius: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* เงา */
         }
 
         /* Glow Hover Text */
         .glow:hover {
-            text-shadow: 0 0 10px #4dabf7, 0 0 20px #228be6;
+            text-shadow: 0 0 10px #4dabf7, 0 0 20px #228be6; /* เอฟเฟกต์แสงเรือง */
             transition: 0.3s;
         }
 
         /* Floating Card Effect */
         .float-box {
-            animation: float 3s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite; /* การลอยขึ้นลงแบบวนลูป */
         }
 
         @keyframes float {
@@ -193,22 +195,21 @@
             transition: 0.3s;
         }
 
-    </style>
+    </style> <!-- จบส่วน CSS -->
 </head>
-<body>
+
+<body> <!-- เริ่มเนื้อหาของเว็บไซต์ -->
 
 <!-- Parallax Header -->
-<div class="parallax"></div>
+<div class="parallax"></div> <!-- ส่วนภาพพื้นหลังแบบพารัลแลกซ์ -->
 
+<h1>Who I Am ?</h1> <!-- หัวข้อใหญ่ -->
 
-
-<h1>Who I Am ?</h1>
-
-<div class="profile-container fade">
-    <img src="image/tar.jpg" alt="me">
+<div class="profile-container fade"> <!-- กล่องรูปโปรไฟล์ พร้อมเอฟเฟกต์ fade -->
+    <img src="image/tar.jpg" alt="me"> <!-- รูปโปรไฟล์ -->
 </div>
 
-<div class="section fade">
+<div class="section fade"> <!-- ส่วนข้อมูลส่วนตัว พร้อมแอนิเมชัน -->
     <p>
         สวัสดีครับ ผมชื่อ นายชนะชัย ศรีสวัสดิ์ ชื่อเล่น ตุ๊ต๊ะ อายุ 21 ปี <br>
         อาศัยอยู่ที่ อำเภอท่าเรือ จังหวัดพระนครศรีอยุธยา <br>
@@ -223,37 +224,37 @@
     </p>
 </div>
 
-<div class="hobby-section fade">
+<div class="hobby-section fade"> <!-- กล่องรวมงานอดิเรก -->
 
-    <div class="hobby-item fade">
+    <div class="hobby-item fade"> <!-- งานอดิเรกชิ้นที่ 1 -->
         <div>งานอดิเรกที่ชอบ : เล่นกีตาร์ 🎸</div>
         <img src="image/att.xSYNIxwKhmUBkEaODJTexCIN_uayuk3yyl2dC3zU5MI.jpg" alt="guitar">
     </div>
 
-    <div class="hobby-item fade">
+    <div class="hobby-item fade"> <!-- งานอดิเรกชิ้นที่ 2 -->
         <div>กีฬาที่ชอบ : แบดมินตัน 🏸</div>
         <img src="image/IMG_3930.JPG" alt="badminton">
     </div>
 
-    <div class="hobby-item fade">
+    <div class="hobby-item fade"> <!-- งานอดิเรกชิ้นที่ 3 -->
         <div>เพลงที่ชอบ : <a href="https://www.youtube.com/watch?v=hzDaVKcfHrY&list=RDhzDaVKcfHrY&start_radio=1">On My Own</a></div>
         <img src="image/IMG_8502.PNG" alt="song">
     </div>
 
-    <div class="hobby-item fade">
+    <div class="hobby-item fade"> <!-- งานอดิเรกชิ้นที่ 4 -->
         <div>ศิลปินที่ชอบ : P9D</div>
         <img src="image/IMG_4507.JPG" alt="artist">
     </div>
 
 </div>
 
-<div class="contact-title fade">ช่องทางการติดต่อ</div>
+<div class="contact-title fade">ช่องทางการติดต่อ</div> <!-- หัวข้อการติดต่อ -->
 
-<div class="contact-section fade">
+<div class="contact-section fade"> <!-- ส่วนช่องทางการติดต่อ -->
     fackbook : <a href="https://www.facebook.com/chanachai.srisawat.2024">Chanachai Srisawat</a> <br>
     instragram : <a href="https://www.instagram.com/chanachai_xxi/">Chanachai_XXI</a> <br>
     Line : Shadow547cnc
 </div>
 
-</body>
-</html>
+</body> <!-- จบเนื้อหาเว็บ -->
+</html> <!-- จบเอกสารเว็บ -->
