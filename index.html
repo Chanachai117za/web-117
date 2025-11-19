@@ -1,108 +1,126 @@
+<!-- บอกว่าไฟล์นี้เป็น HTML5 -->
 <!DOCTYPE html>
+
+<!-- กำหนดภาษาของเว็บเป็นภาษาไทย -->
 <html lang="th">
 <head>
+    <!-- กำหนด charset เป็น UTF-8 เพื่อรองรับภาษาไทย -->
     <meta charset="utf-8">
+
+    <!-- รองรับการแสดงผลบนมือถือ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ชื่อแท็บของหน้าเว็บ -->
     <title>Who I Am?</title>
 
-    <!-- ฟอนต์สวยงาม -->
+    <!-- โหลดฟอนต์ Prompt จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- โหลด Animate.css สำหรับเอฟเฟกต์ Animation -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
 
     <style>
+        /* ตั้งค่าการแสดงผลของ body ทั้งหมด */
         body {
-            font-family: 'Prompt', sans-serif;
-            background: linear-gradient(135deg, #cfd9df, #e2ebf0);
-            margin: 0;
-            padding: 0;
-            color: #333;
-            overflow-x: hidden;
+            font-family: 'Prompt', sans-serif;   /* ใช้ฟอนต์ Prompt */
+            background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* พื้นหลังแบบไล่สี */
+            margin: 0; /* ไม่มีระยะขอบ */
+            padding: 0; /* ไม่มีระยะด้านใน */
+            color: #333; /* กำหนดสีตัวอักษร */
+            overflow-x: hidden; /* ปิดการเลื่อนแนวนอน */
         }
 
-        /* เอฟเฟกต์ Fade-in ทุก Section */
+        /* คลาส fade ใช้สำหรับเอฟเฟกต์ Fade In */
         .fade {
-            animation: fadeInUp 1s ease;
+            animation: fadeInUp 1s ease; /* ใช้ keyframes fadeInUp */
         }
 
+        /* กำหนดคีย์เฟรม Fade In เลื่อนขึ้น */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Header */
+        /* กำหนดสไตล์หัวข้อ h1 */
         h1 {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 3.2rem;
-            font-weight: 600;
-            color: #1d3557;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-            animation: zoomIn 1s ease;
+            text-align: center;     /* จัดให้ตรงกลาง */
+            margin-top: 40px;       /* ระยะด้านบน */
+            font-size: 3.2rem;      /* ขนาดตัวอักษรใหญ่ */
+            font-weight: 600;       /* หนา */
+            color: #1d3557;         /* สีฟ้าน้ำเงินเข้ม */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* เงาเบาๆ */
+            animation: zoomIn 1s ease; /* เอฟเฟกต์ซูมเข้า */
         }
 
+        /* คีย์เฟรมสำหรับซูมเข้า */
         @keyframes zoomIn {
             0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* รูปโปรไฟล์ */
+        /* กล่องครอบรูปโปรไฟล์ */
         .profile-container {
-            text-align: center;
+            text-align: center; /* จัดภาพให้อยู่กลาง */
             margin-top: 20px;
         }
 
+        /* รูปโปรไฟล์ */
         .profile-container img {
-            width: 330px;
-            height: 330px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 7px solid #1d3557;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: 0.4s;
+            width: 330px;        /* ความกว้าง */
+            height: 330px;       /* ความสูง */
+            object-fit: cover;   /* ครอบรูปให้เต็มวง */
+            border-radius: 50%;  /* ทำเป็นวงกลม */
+            border: 7px solid #1d3557; /* เส้นขอบรอบรูป */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* เงา */
+            transition: 0.4s;    /* ความเร็วตอน hover */
         }
 
+        /* เอฟเฟกต์เมื่อ hover รูป */
         .profile-container img:hover {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.05) rotate(2deg); /* ขยาย + หมุนเล็กน้อย */
         }
 
-        /* Section ข้อมูลส่วนตัว */
+        /* ส่วนข้อมูลส่วนตัว */
         .section {
-            text-align: center;
-            font-size: 1.6rem;
+            text-align: center; /* จัดข้อความกลาง */
+            font-size: 1.6rem;  /* ขนาดตัวอักษรใหญ่ */
             margin-top: 40px;
-            line-height: 2.3rem;
+            line-height: 2.3rem; /* ระยะห่างระหว่างบรรทัด */
             padding: 0 20px;
         }
 
-        /* Section งานอดิเรก */
+        /* โครงร่าง section งานอดิเรก */
         .hobby-section {
             font-size: 1.4rem;
-            margin: 60px auto;
+            margin: 60px auto;   /* อยู่ตรงกลาง */
             width: 90%;
-            max-width: 900px;
+            max-width: 900px;    /* จำกัดไม่ให้กว้างเกิน */
         }
 
+        /* กล่องแต่ละงานอดิเรก */
         .hobby-item {
-            margin-bottom: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-radius: 18px;
+            margin-bottom: 70px; /* ระยะห่างชิ้นถัดไป */
+            display: flex;       /* วางรูป+ข้อความแบบ Flex */
+            justify-content: space-between; /* แยกซ้าย-ขวา */
+            align-items: center; 
+            flex-wrap: wrap;     /* รองรับหน้าจอเล็ก */
+            border-radius: 18px; 
             padding: 30px;
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.7); /* โปร่งใส */
+            backdrop-filter: blur(6px);        /* เบลอพื้นหลัง */
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* เงา */
             transition: 0.3s;
         }
 
+        /* Hover ของกล่องงานอดิเรก */
         .hobby-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+            transform: translateY(-6px); /* ขยับขึ้นเล็กน้อย */
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25); /* เงาเข้มขึ้น */
         }
 
+        /* รูปในงานอดิเรก */
         .hobby-item img {
-            width: 220px;
+            width: 220px; 
             height: 220px;
             object-fit: cover;
             border-radius: 20px;
@@ -110,11 +128,12 @@
             transition: 0.3s;
         }
 
+        /* Hover ขยายรูป */
         .hobby-item img:hover {
             transform: scale(1.06);
         }
 
-        /* Contact */
+        /* หัวข้อช่องทางติดต่อ */
         .contact-title {
             text-align: center;
             font-size: 2.4rem;
@@ -124,11 +143,12 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
 
+        /* กล่อง contact */
         .contact-section {
             font-size: 1.4rem;
             width: 90%;
             max-width: 900px;
-            margin: 40px auto 80px auto;
+            margin: 40px auto 80px auto; /* กลาง + ระยะด้านล่าง */
             line-height: 2.3rem;
             padding: 20px 30px;
             background: rgba(255,255,255,0.7);
@@ -137,47 +157,51 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
+        /* ลิงก์ */
         a {
-            color: #1a237e;
+            color: #1a237e; /* สีฟ้าเข้ม */
             font-weight: 600;
             transition: 0.2s;
         }
+
         a:hover {
-            color: #0d47a1;
+            color: #0d47a1;   /* ฟ้าเข้มกว่า */
             text-decoration: underline;
         }
-            /* เอฟเฟกต์ Parallax Background */
+
+        /* แถบพื้นหลังแบบ Parallax */
         .parallax {
             background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80');
             height: 350px;
-            background-attachment: fixed;
+            background-attachment: fixed; /* เอฟเฟกต์ parallax */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.7); /* ทำให้มืดลงเล็กน้อย */
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        /* Glow Hover Text */
+        /* Hover เรืองแสง */
         .glow:hover {
             text-shadow: 0 0 10px #4dabf7, 0 0 20px #228be6;
             transition: 0.3s;
         }
 
-        /* Floating Card Effect */
+        /* กล่องลอย */
         .float-box {
             animation: float 3s ease-in-out infinite;
         }
 
+        /* คีย์เฟรมลอยขึ้นลง */
         @keyframes float {
             0% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
             100% { transform: translateY(0); }
         }
 
-        /* Divider เส้นคั่นแบบ Gradient */
+        /* เส้นคั่นแบบ Gradient */
         .divider {
             width: 80%;
             height: 4px;
@@ -186,7 +210,7 @@
             border-radius: 10px;
         }
 
-        /* Contact Box Hover */
+        /* Hover กล่อง Contact ขยายเล็กน้อย */
         .contact-section:hover {
             transform: scale(1.02);
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
@@ -195,19 +219,21 @@
 
     </style>
 </head>
+
 <body>
 
-<!-- Parallax Header -->
+<!-- ส่วนบนสุดแบบ Parallax -->
 <div class="parallax"></div>
 
-
-
+<!-- หัวข้อหลัก -->
 <h1>Who I Am ?</h1>
 
+<!-- รูปโปรไฟล์ -->
 <div class="profile-container fade">
     <img src="image/tar.jpg" alt="me">
 </div>
 
+<!-- ข้อมูลส่วนตัว -->
 <div class="section fade">
     <p>
         สวัสดีครับ ผมชื่อ นายชนะชัย ศรีสวัสดิ์ ชื่อเล่น ตุ๊ต๊ะ อายุ 21 ปี <br>
@@ -223,37 +249,19 @@
     </p>
 </div>
 
+<!-- งานอดิเรก -->
 <div class="hobby-section fade">
 
+    <!-- งานอดิเรก 1 -->
     <div class="hobby-item fade">
         <div>งานอดิเรกที่ชอบ : เล่นกีตาร์ 🎸</div>
         <img src="image/att.xSYNIxwKhmUBkEaODJTexCIN_uayuk3yyl2dC3zU5MI.jpg" alt="guitar">
     </div>
 
+    <!-- งานอดิเรก 2 -->
     <div class="hobby-item fade">
         <div>กีฬาที่ชอบ : แบดมินตัน 🏸</div>
         <img src="image/IMG_3930.JPG" alt="badminton">
     </div>
 
-    <div class="hobby-item fade">
-        <div>เพลงที่ชอบ : <a href="https://www.youtube.com/watch?v=hzDaVKcfHrY&list=RDhzDaVKcfHrY&start_radio=1">On My Own</a></div>
-        <img src="image/IMG_8502.PNG" alt="song">
-    </div>
-
-    <div class="hobby-item fade">
-        <div>ศิลปินที่ชอบ : P9D</div>
-        <img src="image/IMG_4507.JPG" alt="artist">
-    </div>
-
-</div>
-
-<div class="contact-title fade">ช่องทางการติดต่อ</div>
-
-<div class="contact-section fade">
-    fackbook : <a href="https://www.facebook.com/chanachai.srisawat.2024">Chanachai Srisawat</a> <br>
-    instragram : <a href="https://www.instagram.com/chanachai_xxi/">Chanachai_XXI</a> <br>
-    Line : Shadow547cnc
-</div>
-
-</body>
-</html>
+    <!-- งานอดิเรก
