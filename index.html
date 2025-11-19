@@ -47,13 +47,13 @@
 
         /* รูปโปรไฟล์ */
         .profile-container { /* กล่องเก็บรูปโปรไฟล์ */
-            text-align: center; /* จัดรูปให้อยู่กลาง */
-            margin-top: 20px; /* ระยะขอบด้านบน */
+            text-align: center; 
+            margin-top: 20px; 
         }
 
         .profile-container img { /* สไตล์ของรูปโปรไฟล์ */
-            width: 330px; /* กำหนดความกว้างรูป */
-            height: 330px; /* ความสูงรูป */
+            width: 330px; 
+            height: 330px;
             object-fit: cover; /* ครอบรูปให้เต็มพื้นที่ */
             border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
             border: 7px solid #1d3557; /* ขอบสีกรม */
@@ -84,7 +84,7 @@
 
         .hobby-item { /* กล่องงานอดิเรกแต่ละอัน */
             margin-bottom: 70px; /* ระยะห่างระหว่างกล่อง */
-            display: flex; /* ใช้ flexbox */
+            display: flex; /* ให้เป็นแนวนอน */
             justify-content: space-between; /* วางองค์ประกอบให้แยกห่างกัน */
             align-items: center; /* จัดให้อยู่แนวกลาง */
             flex-wrap: wrap; /* ลงบรรทัดใหม่เมื่อหน้าจอเล็ก */
@@ -152,7 +152,7 @@
             background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80'); /* รูปพื้นหลัง */
             height: 350px; /* ความสูงของส่วนพารัลแลกซ์ */
             background-attachment: fixed; /* ทำให้พื้นหลังเลื่อนช้ากว่าหน้าเว็บ */
-            background-position: center; /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+            background-position: center; /
             background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
             background-size: cover; /* ปรับภาพให้เต็มกรอบ */
             filter: brightness(0.7); /* ลดความสว่างเพื่อให้ดู cinematic */
@@ -161,23 +161,9 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* เงา */
         }
 
-        /* Glow Hover Text */
-        .glow:hover {
-            text-shadow: 0 0 10px #4dabf7, 0 0 20px #228be6; /* เอฟเฟกต์แสงเรือง */
-            transition: 0.3s;
-        }
+        
 
-        /* Floating Card Effect */
-        .float-box {
-            animation: float 3s ease-in-out infinite; /* การลอยขึ้นลงแบบวนลูป */
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-            100% { transform: translateY(0); }
-        }
-
+    
         /* Divider เส้นคั่นแบบ Gradient */
         .divider {
             width: 80%;
@@ -257,4 +243,5 @@
 
 </body> <!-- จบเนื้อหาเว็บ -->
 </html> <!-- จบเอกสารเว็บ -->
+
 
